@@ -1,0 +1,14 @@
+.banderole{
+    background-image: url(/img/tapisserie.jpg);
+    background-size: cover;
+    height: 200px;
+}
+
+.rosefonce{
+    background-color: #b2565a ;
+    color: #ffffff;
+}
+.bandeau{
+    font-size: 40px;
+    font-weight: normal;
+}
