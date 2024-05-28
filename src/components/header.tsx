@@ -5,7 +5,7 @@ export default function Header() {
   return (
     <>
     <header>
-      <nav className="navbar navbar-expand-lg justify-content-lg-between pt-4">
+      <nav className="py-8">
 
         <div className="container">
 
@@ -19,7 +19,7 @@ export default function Header() {
         </div>
       </nav>
     </header >
-    <section className={style.banderole}>
+    <section className={`${style.banderole} pt-9`}>
             <div className="py-3">
                 <div className={`${style.rosefonce} p-4 my-lg-5`}>
                     <div className="container">
