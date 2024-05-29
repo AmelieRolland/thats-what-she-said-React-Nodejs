@@ -7,7 +7,7 @@
     "nodemon": "nodemon server.js",
     "build": "next build",
     "lint": "next lint",
-    "serve" : "node server.js"
+    "serve": "node server.js"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",

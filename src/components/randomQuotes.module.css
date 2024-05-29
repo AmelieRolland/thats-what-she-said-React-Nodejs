@@ -1,0 +1,23 @@
+.rosefonce{
+    background-color: #b2565a ;
+    color: #ffffff;
+}
+.citation{
+    margin-top: 300px;
+    padding-bottom: 50px;
+}
+.mneg{
+    margin-top: -150px;
+    margin-bottom: 100px;
+}
+.imgautrice{
+    background-color: #FED3D3;
+}
+.generate{
+    background-color: #EEDAC1;
+    color: black;
+    border-radius: 30px;
+    padding: 15px 40px 15px 40px;
+    margin-top: 40px;
+    border: none;
+}
