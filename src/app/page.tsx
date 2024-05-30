@@ -2,6 +2,7 @@ import { GetServerSideProps } from 'next';
 "use client";
 import Header from "@/components/header";
 import RandomQuote from '@/components/randomQuote';
+import WhoIsShe from '@/components/whoIsShe';
 import Image from "next/image";
 import { createContext, useEffect, useState } from 'react';
 
@@ -15,7 +16,6 @@ export default function Home() {
       const apiEndpoint = `http://localhost:3002/author`;
       const getQuoteData = await fetch(apiEndpoint);
       const data = await getQuoteData.json();
-      console.log('Data fetched:', data);
       setDataResponse(data)
 
     }
@@ -34,6 +34,7 @@ export default function Home() {
 
       <main>
         <RandomQuote />
+        <WhoIsShe />
 
       </main>
 

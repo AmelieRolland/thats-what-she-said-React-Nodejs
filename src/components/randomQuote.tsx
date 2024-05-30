@@ -1,7 +1,7 @@
 import Image from "next/image"
 import style from "./randomQuotes.module.css"
-import React, { useContext } from 'react';
-import { DataContext } from "@/app/page"; 
+import React, { useContext } from 'react'
+import { DataContext } from "@/app/page"
 
 export default function RandomQuote() {
     const data = useContext(DataContext);
@@ -19,7 +19,7 @@ export default function RandomQuote() {
                     </div>
                 </div>
 
-                <div className="lg:w-3/5 w-full flex items-center">
+                <div className="lg:w-3/5 w-full flex items-center pl-20">
                     <div className="w-full">
                         
                         <div className="lg:w-1/5 w-full pl-0 lg:pl-5 pt-3 lg:pt-0">
@@ -29,9 +29,11 @@ export default function RandomQuote() {
                         </div>
                         <div className="lg:w-4/5 w-full flex flex-col justify-center px-0 lg:px-5">
                             <p className="pl-5 pt-3">{data.quote}</p>
-                            {/* </p> */}
-                            <p className="pl-5">{data.author_name} {data.author_surname} <em>{data.reference}</em>, {data.dates}</p>
-                            <div className="pl-5"><input className="generate" type="button" OnClick="javascript:window.location.reload()" value="Générer"/></div>
+                            <p className="pl-5 pt-5">{data.author_name} {data.author_surname} <em>{data.reference}</em>, {data.author_years}</p>
+                            <div className="pl-5 pt-5"><input className={style.generate} type="button" 
+                            OnClick="javascript:window.location.reload()" 
+                            value="Générer"/>
+                            </div>
                         </div>
                     </div>
                 </div>

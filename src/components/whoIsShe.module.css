@@ -1,0 +1,26 @@
+.bio{
+    border-left: #FED3D3 solid 5px;
+}
+.bio p{
+    font-family: 'Courier New', Courier, monospace;
+    padding-left: 30px;
+    font-size: 16px;
+}
+
+.strong {
+    position: relative;
+    color: #662429;
+    padding-left: 30px;
+
+}
+.strong::before {
+    background-color: #EEDAC1;
+    content: "";
+    position: absolute;
+    width: calc(100% + 4px);
+    height: 60%;
+    bottom: 0;
+    z-index: -1;
+    transform: rotate(-2deg);
+    padding-left: 30px;
+  }
