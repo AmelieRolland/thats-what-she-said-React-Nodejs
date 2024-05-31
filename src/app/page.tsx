@@ -1,48 +1,50 @@
-import { GetServerSideProps } from 'next';
 "use client";
 import Header from "@/components/header";
 import RandomQuote from '@/components/randomQuote';
 import WhoIsShe from '@/components/whoIsShe';
-import Image from "next/image";
 import { createContext, useEffect, useState } from 'react';
 
-const DataContext = createContext({});
+interface QuoteData {
+  img: string;
+  quote: string;
+  author_name: string;
+  author_surname: string;
+  reference: string;
+  author_years: string;
+  author_bio: string;
+}
+
+const DataContext = createContext<{ data: QuoteData | null, fetchNewQuote: () => void }>({
+  data: null,
+  fetchNewQuote: () => {},
+});
 
 export default function Home() {
+  const [data, setDataResponse] = useState<QuoteData | null>(null);
 
-  const [data, setDataResponse] = useState({})
+  const fetchNewQuote = async () => {
+    const apiEndpoint = `http://localhost:3002/author`;
+    const getQuoteData = await fetch(apiEndpoint);
+    const newData = await getQuoteData.json();
+    setDataResponse(newData);
+  }
+
   useEffect(() => {
-    async function getData(){
-      const apiEndpoint = `http://localhost:3002/author`;
-      const getQuoteData = await fetch(apiEndpoint);
-      const data = await getQuoteData.json();
-      setDataResponse(data)
+    fetchNewQuote();
+  }, []);
 
-    }
-    getData();
-  }, []
-  
-  )
-  
   return (
-    
-    <DataContext.Provider value={data}>
+    <DataContext.Provider value={{ data, fetchNewQuote }}>
       <header>
         <Header />
-      
       </header>
-
       <main>
         <RandomQuote />
         <WhoIsShe />
-
       </main>
-
-      </DataContext.Provider>
-
-
-
-  )
+    </DataContext.Provider>
+  );
 }
+
 export { DataContext };
 
