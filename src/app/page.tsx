@@ -14,7 +14,7 @@ interface QuoteData {
   author_bio: string;
 }
 
-const DataContext = createContext<{ data: QuoteData | null, fetchNewQuote: () => void }>({
+export const DataContext = createContext<{ data: QuoteData | null, fetchNewQuote: () => void }>({
   data: null,
   fetchNewQuote: () => {},
 });
@@ -46,5 +46,4 @@ export default function Home() {
   );
 }
 
-export { DataContext };
 

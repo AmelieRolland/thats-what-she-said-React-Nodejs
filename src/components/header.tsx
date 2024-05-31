@@ -11,8 +11,9 @@ export default function Header() {
 
           <div>
             <a href="#">
-              <img className="img-fluid" />
-              <Image src="/img/logo3.png" alt="" width={500} height={60}/>
+              <div className="img-fluid">
+                <Image src="/img/logo3.png" alt="" width={500} height={60}/>
+              </div>
             </a>
           </div>
 
