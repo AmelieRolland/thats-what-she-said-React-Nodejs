@@ -1,7 +1,7 @@
 "use client";
 import style from "./whoIsShe.module.css"
 import React, { useContext } from 'react'
-import { DataContext } from "@/app/page"
+import { DataContext } from "@/app/dataContext";
 
 export default function WhoIsShe(){
     const { data } = useContext(DataContext);

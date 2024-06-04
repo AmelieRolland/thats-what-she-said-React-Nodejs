@@ -2,7 +2,7 @@
 import Image from "next/image";
 import style from "./randomQuotes.module.css";
 import React, { useContext } from 'react';
-import { DataContext } from "@/app/page";
+import { DataContext } from "@/app/dataContext";
 
 
 export default function RandomQuote() {
