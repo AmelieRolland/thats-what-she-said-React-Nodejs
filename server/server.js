@@ -11,7 +11,7 @@ const mariadb = require('mariadb');
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    res.header('Access-Control-Allow-Origin', 'https://thats-what-she-said-react-nodejs-rjtw-1c0p1sden.vercel.app/');
     next();
   });
 
