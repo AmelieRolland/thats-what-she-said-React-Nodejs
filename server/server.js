@@ -10,6 +10,10 @@ const mariadb = require('mariadb');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', 'http://localhost:3000');
+    next();
+  });
 
 const pool = mariadb.createPool({
     host: '127.0.0.1', 

@@ -2,6 +2,7 @@
 import Header from "@/components/header";
 import RandomQuote from '@/components/randomQuote';
 import WhoIsShe from '@/components/whoIsShe';
+
 import { createContext, useEffect, useState } from 'react';
 
 interface QuoteData {
@@ -24,10 +25,17 @@ export default function Home() {
 
   const fetchNewQuote = async () => {
     const apiEndpoint = `http://localhost:3002/author`;
-    const getQuoteData = await fetch(apiEndpoint);
-    const newData = await getQuoteData.json();
-    setDataResponse(newData);
-  }
+    try {
+      const getQuoteData = await fetch(apiEndpoint);
+      if (!getQuoteData.ok) {
+        throw new Error("Chargement des données impossible :( ");
+      }
+      const { data } = await getQuoteData.json();
+      setDataResponse(data);
+    } catch (error) {
+      console.error("Chargement des données impossible :( ", error);
+    }
+  };
 
   useEffect(() => {
     fetchNewQuote();

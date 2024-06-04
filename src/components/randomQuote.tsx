@@ -7,6 +7,7 @@ import { DataContext } from "@/app/page";
 
 export default function RandomQuote() {
     const { data, fetchNewQuote } = useContext(DataContext);
+   
 
     if (!data) {
         return (
@@ -20,7 +21,7 @@ export default function RandomQuote() {
             </div>
         </div> );
     }
-
+    console.log(data.quote)
     return (
         <section id="quote">
             <div className={`${style.rosefonce}`}>
