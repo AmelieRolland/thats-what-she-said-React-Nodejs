@@ -11,7 +11,7 @@ export default function Home() {
   const [data, setDataResponse] = useState<QuoteData | null>(null);
 
   const fetchNewQuote = async () => {
-    const apiEndpoint = `http://localhost:3002/author`;
+    const apiEndpoint = `thats-what-she-said-react-nodejs-rjtw.vercel.app/author`;
     try {
       const getQuoteData = await fetch(apiEndpoint);
       if (!getQuoteData.ok) {
